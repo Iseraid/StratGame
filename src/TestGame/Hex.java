@@ -8,6 +8,7 @@ package TestGame;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.util.HashMap;
 import java.util.Properties;
 
 /**
@@ -16,6 +17,7 @@ import java.util.Properties;
  */
 public class Hex {
     
+    public HashMap<String,Float> attribute;
     public Properties p;
     public Construction Building[];
     //int test;
@@ -23,6 +25,8 @@ public class Hex {
     public Hex() {
         
         //test = 0;
+        attribute = new HashMap();
+        //attribute.put("Лес", new Float(0.1));
         p = new Properties();
         Building = new Construction[6];
         for (int i = 0; i<6; i++)
