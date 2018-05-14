@@ -29,7 +29,6 @@ public class Hex {
         {
             Building[i] = new Construction();
         }
-        //p.setProperty(key, value);  //Добавить ключи!!!1!11Ё!1!
         
     }
     
