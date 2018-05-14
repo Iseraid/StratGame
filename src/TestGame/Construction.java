@@ -11,4 +11,5 @@ package TestGame;
  */
 public class Construction {
     int BuildingType;
+    //need to do smth
 }
