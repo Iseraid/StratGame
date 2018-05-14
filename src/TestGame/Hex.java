@@ -18,7 +18,6 @@ import java.util.Properties;
 public class Hex {
     
     public HashMap<String,Float> attribute;
-    public Properties p;
     public Construction Building[];
     //int test;
     
@@ -27,7 +26,6 @@ public class Hex {
         //test = 0;
         attribute = new HashMap();
         //attribute.put("Лес", new Float(0.1));
-        p = new Properties();
         Building = new Construction[6];
         for (int i = 0; i<6; i++)
         {
