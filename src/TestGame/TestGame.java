@@ -5,7 +5,12 @@
  */
 package TestGame;
 
+import java.awt.Graphics;
+import java.awt.Point;
 import java.util.Scanner;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 /**
  *
@@ -18,7 +23,14 @@ public class TestGame {
      */
     
     //public static TestGame Game;
-    public static Map CurrentMap;
+    public static Map currentMap;
+    
+    public static GrPanel panel;
+    public static int hexSize = 60;
+    
+    public static void draw(Graphics g) {
+        currentMap.draw(g);        
+    }
     
     public static void RunTheGame(){
         
@@ -33,7 +45,18 @@ public class TestGame {
         //
         //
         
-        
+        Point mapSize = XYDlg("Enter map size");
+        if ((mapSize.x==0) && (mapSize.y==0)){
+            return;
+        }
+        currentMap = new Map(mapSize);
+        JFrame frame = new JFrame("Celtic Bumblebee");
+        panel = new GrPanel();
+        frame.add(panel);
+        frame.setSize(1024, 768);
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
+	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         
         //System.out.println("Запущен TestGame.java");
@@ -74,6 +97,28 @@ public class TestGame {
         
         System.out.println("Program ended (very nice)");
         
+    }
+    
+    public static Point XYDlg(String caption){
+        JTextField xField = new JTextField();
+        JTextField yField = new JTextField(); 
+        Object[] message = {
+            "X:", xField,
+            "Y:", yField
+        };
+
+        int option = JOptionPane.showConfirmDialog(null, message, caption, JOptionPane.OK_CANCEL_OPTION);
+        if (option == JOptionPane.OK_OPTION) {
+            int mx = Integer.parseInt(xField.getText());
+            int my = Integer.parseInt(yField.getText());
+            if (mx>0 && my>0){
+                return new Point(mx,my);
+            } else {
+                return new Point (0,0);
+            }
+        } else {
+            return new Point (0,0);
+        }
     }
     
 }

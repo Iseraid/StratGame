@@ -5,6 +5,9 @@
  */
 package TestGame;
 
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.util.Properties;
 
 /**
@@ -24,9 +27,18 @@ public class Hex {
         Building = new Construction[6];
         for (int i = 0; i<6; i++)
         {
-            Building[i].BuildingType = 0;
+            Building[i] = new Construction();
         }
         //p.setProperty(key, value);  //Добавить ключи!!!1!11Ё!1!
+        
+    }
+    
+    public void draw(int x, int y, Graphics g) {
+        Graphics2D g2d = (Graphics2D) g;
+        g2d.setColor(Color.RED);
+	g2d.drawOval(x, y, TestGame.hexSize, TestGame.hexSize);
+    }
+    public void drawConstructions(int x, int y, Graphics g) {
         
     }
     

@@ -5,6 +5,9 @@
  */
 package TestGame;
 
+import java.awt.Graphics;
+import java.awt.Point;
+
 /**
  *
  * @author Тест
@@ -15,13 +18,19 @@ public class Map {
     int MapY;
     public HexGrid HG;
                                                                     
+    public Map(Point size) {
+        MapX = size.x;
+        MapY = size.y;
+        HG = new HexGrid(size.x, size.y);
+    }
     public Map(int x,int y) {
-        
         MapX = x;
         MapY = y;
         HG = new HexGrid(x, y);
-        
-        
+    }
+    
+    public void draw(Graphics g) {
+        HG.draw(g);
     }
     
 }

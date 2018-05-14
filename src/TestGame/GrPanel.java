@@ -5,18 +5,17 @@
  */
 package TestGame;
 
+import java.awt.Graphics;
+import javax.swing.JPanel;
+
 /**
  *
- * @author Тест
+ * @author Vectarrio
  */
-public class Construction {
-    int BuildingType;
-    //need to do smth
-    public Construction(){
-        BuildingType = 0;
-    }
+public class GrPanel extends JPanel {
     
-    public void draw() {
-        
+    @Override
+    public void paint(Graphics g) {
+        TestGame.draw(g);
     }
 }
