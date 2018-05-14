@@ -19,11 +19,9 @@ public class Hex {
     
     public HashMap<String,Float> attribute;
     public Construction Building[];
-    //int test;
     
     public Hex() {
         
-        //test = 0;
         attribute = new HashMap();
         //attribute.put("Лес", new Float(0.1));
         Building = new Construction[6];
